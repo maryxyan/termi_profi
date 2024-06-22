@@ -28,19 +28,18 @@ Array.prototype.find = function(value) {
         for(var e=this.length;--e>=0;)if(this[e]===t)return e;return-1;
     }
 };
-term.banner = [
-    '  ____ ___ _____ ',
-    ' / ___|_ _|_   _| __      __   _      _____              _           _',
-    '| |  _ | |  | |   \\ \\    / /__| |__  |_   _|__ _ _ _ __ (_)_ _  __ _| |',
-    '| |_| || |  | |    \\ \\/\\/ / -_) \'_ \\   | |/ -_) \'_| \'  \\| | \' \\/ _` | |',
-    ' \\____|___| |_|     \\_/\\_/\\___|_.__/   |_|\\___|_| |_|_|_|_|_||_\\__,_|_|'
+
+term.banner = [   ' MUT',
+    'Marian',
+    'PORTFOLIO'
 ];
+
 function greetings() {
     var title;
     if (this.cols() > term.banner[1].length) {
         title = term.banner.join('\n');
     } else {
-        title = 'GIT Web Terminal';
+        title = 'MUT Web Terminal Porfolio';
     }
     return title + '\n\n' + 'use [[;#fff;]help] to see the available commands' +
            ' or [[;#fff;]credits] to list the projects used\n';
@@ -1457,13 +1456,13 @@ BrowserFSConfigure().then(() => {
                 cb(Object.keys(term.commands));
             }
         },
-        greetings: false,
+        greetings: true,
         name,
         prompt: function(cb) {
             var path = color('blue', cwd);
             var b = branch ? ' &#91;' + color('violet', branch) + '&#93;' : '';
             cb([
-                color('green', (credentials.username || 'anonymous') + '@gitwebterm'),
+                color('green', (credentials.username || 'anonymous') + '@guest'),
                 ':',
                 path,
                 b,
